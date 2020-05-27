@@ -15,6 +15,5 @@ La fiecare comanda de forma !RDPT !Rdpt sau !rdpt se adauga un numar la counter 
  - Counter font size -> Fontul scrisului si al numarului afisat
  - Font color -> culoarea textului de afisat
  - Seconds to display message -> Durata in secunde a afisajului de mesaj pana acesta dispare.
- - Message Text-> Mesajul de afisaj cand cineva utilizeaza comanda !Rdpt . Variabila de user este USER cu capslock. Ex
- - Multumim USER. / USER prezent la noi in comunitate.
+ - Message Text-> Mesajul de afisaj cand cineva utilizeaza comanda !Rdpt . Variabila de user este USER cu capslock. Ex Multumim USER. / USER prezent la noi in comunitate.
 
