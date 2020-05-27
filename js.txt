@@ -1,0 +1,78 @@
+
+let inspectionList = [];
+let messageDisplaySeconds = 5;
+let messageText = "";
+window.addEventListener('onEventReceived', function (obj) {
+    if (!obj.detail.event) {
+      return;
+    }
+    if (typeof obj.detail.event.itemId !== "undefined") {
+        obj.detail.listener = "redemption-latest" ;
+    }
+    const listener = obj.detail.listener.split("-")[0];
+    const event = obj.detail.event;
+  
+     if (listener === 'message'){
+       if(checkMessage(event.data.text))
+         {
+           console.log(obj.detail.event);
+           console.log("checking presence");
+             if(checkPresence(event.data.displayName))
+            	 {
+             	  console.log("NO need to cuont");
+           		  }else{
+           		   inspectionList.push(event.data.displayName);
+                   displayMessage(event.data.displayName, inspectionList.length);
+                    $(".totalN").empty();
+                    $(".totalN").append(inspectionList.length);
+           		  }
+         }
+     }
+
+});
+function checkPresence(id){
+
+  if(inspectionList.indexOf(id) < 0 ) {
+  return false;
+  }else{
+    return true;
+  }
+}
+function displayMessage(user, total) {
+  var msg = messageText.replace("USER",user);
+ element = "<div id='headerz"+total+"' class='htext'> "+msg+"</div>";
+  $(".main-container").append(element);
+  $("#headerz"+total+"").hide(messageDisplaySeconds*1000, function(){
+  		$("#headerz"+total+"").remove();
+  });
+}
+function checkMessage(messages){
+ if( messages.includes("!rdpt") ||   messages.includes("!Rdpt") || messages.includes("!RDPT")){
+
+    return true; 
+    }else{
+
+    return false;
+    }
+}
+
+
+window.addEventListener('onWidgetLoad', function (obj) {
+    let recents = obj.detail.recents;
+    recents.sort(function (a, b) {
+        return Date.parse(a.createdAt) - Date.parse(b.createdAt);
+    });
+
+  	messageDisplaySeconds = obj.detail.fieldData.messageDisplaySeconds;
+    messageText = obj.detail.fieldData.messageText;
+
+});
+
+
+function addEvent(type, text, username) {
+
+}
+
+function removeEvent(eventId) {
+
+}
