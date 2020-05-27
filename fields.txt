@@ -1,0 +1,28 @@
+{
+    "counterFont": {
+    "type": "number",
+    "label": "Counter font size",
+    "value": 20
+  },
+  
+    "counterColor": {
+     "type": "colorpicker",
+    "label": "Font color",
+    "value": "rgb(255, 255, 255)"
+  },
+     "messageDisplaySeconds": {
+    "type": "number",
+    "label": "Seconds to display message",
+    "value": 5
+  },
+    "logoImage": {
+    "type": "text",
+    "label": "Logo image",
+    "value": "https://cdn.discordapp.com/attachments/657121176098832404/699969672900247583/v7.gif"
+  },
+    "messageText": {
+    "type": "text",
+    "label": "Message text",
+    "value": "USER a facut prezenta."
+  }
+}
