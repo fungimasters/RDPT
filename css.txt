@@ -1,0 +1,19 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+    color: {{fontColor}};
+    font-size: 14px;
+    overflow: hidden;
+}
+
+.htext{
+  font-size:{{counterFont}}px;
+  color:{{counterColor}};
+  width:100%;
+}
+.totalN{
+ 
+  float:left;
+  font-size:{{counterFont}}px;
+  color:{{counterColor}};
+  font-weight:bolder;
+}
