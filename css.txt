@@ -17,3 +17,7 @@
   color:{{counterColor}};
   font-weight:bolder;
 }
+.main-container {
+  background-color: {{mainBGColor}}; 
+  padding:5px;
+}
