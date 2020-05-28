@@ -42,7 +42,7 @@ function displayMessage(user, total) {
   var msg = messageText.replace("USER",user);
  element = "<div id='headerz"+total+"' class='htext'> "+msg+"</div>";
   $(".main-container").append(element);
-  $("#headerz"+total+"").hide(messageDisplaySeconds*1000, function(){
+  $("#headerz"+total+"").fadeOut(messageDisplaySeconds*1000, function(){
   		$("#headerz"+total+"").remove();
   });
 }
