@@ -1,10 +1,29 @@
 {
-    "counterFont": {
+
+  
+   
+     "messageFont": {
+    "type": "number",
+    "label": "Message font size",
+    "value": 20
+  },
+  
+  
+       "messageColor": {
+     "type": "colorpicker",
+    "label": "Font color",
+    "value": "rgb(255, 255, 255)"
+  },
+     "topPosition": {
+    "type": "number",
+    "label": "Top position",
+    "value": 20
+  },
+      "counterFont": {
     "type": "number",
     "label": "Counter font size",
     "value": 20
   },
-  
     "counterColor": {
      "type": "colorpicker",
     "label": "Font color",
@@ -24,5 +43,11 @@
     "type": "text",
     "label": "Message text",
     "value": "USER a facut prezenta."
+  },
+  "mainBGColor" : {
+        "type": "colorpicker",
+    "label": "Background color",
+    "value": "rgb(255, 255, 255)"
   }
+  
 }
