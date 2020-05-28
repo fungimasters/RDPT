@@ -2,6 +2,7 @@
 let inspectionList = [];
 let messageDisplaySeconds = 5;
 let messageText = "";
+let stackList = [];
 window.addEventListener('onEventReceived', function (obj) {
     if (!obj.detail.event) {
       return;
@@ -11,21 +12,27 @@ window.addEventListener('onEventReceived', function (obj) {
     }
     const listener = obj.detail.listener.split("-")[0];
     const event = obj.detail.event;
-  
+    const userID = event.data.displayName;
      if (listener === 'message'){
        if(checkMessage(event.data.text))
          {
-           console.log(obj.detail.event);
-           console.log("checking presence");
+
              if(checkPresence(event.data.displayName))
             	 {
-
+  
            		  }else{
-           		   inspectionList.push(event.data.displayName);
-                   displayMessage(event.data.displayName, inspectionList.length);
+                   
+           		  
+                     if(stackList.length==0){
+                        inspectionList.push(userID);
+                    stackList.push(userID);
+                   displayMessage(userID, inspectionList.length);
                     $(".totalN").empty();
                     $(".totalN").append(inspectionList.length);
-           		  }
+           		  }else{
+                    stackList.push(userID);
+                  }
+                  }
          }
      }
 
@@ -39,13 +46,29 @@ function checkPresence(id){
   }
 }
 function displayMessage(user, total) {
+  
   var msg = messageText.replace("USER",user);
- element = "<div id='headerz"+total+"' class='htext'> "+msg+"</div>";
-  $(".main-container").append(element);
+ element = "<div id='headerz"+total+"' class='htext' style='float:left'> "+msg+"</div>";
+  $(element).insertAfter( ".rdptlogo" );
+
   $("#headerz"+total+"").fadeOut(messageDisplaySeconds*1000, function(){
   		$("#headerz"+total+"").remove();
+        for( var i = 0; i < stackList.length; i++){ if ( stackList[i] === user) { stackList.splice(i, 1); }}
+         checkForNew();
   });
 }
+function checkForNew(userID){
+  if(stackList.length==0){
+    return true;
+  }else{
+     inspectionList.push(userID);
+     displayMessage(stackList[0], inspectionList.length);
+    $(".totalN").empty();
+     $(".totalN").append(inspectionList.length);
+    
+  }
+}
+
 function checkMessage(messages){
  if( messages.includes("!rdpt") ||   messages.includes("!Rdpt") || messages.includes("!RDPT")){
 
