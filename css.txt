@@ -6,21 +6,31 @@
 }
 
 .htext{
-  font-size:{{counterFont}}px;
-  color:{{counterColor}};
-  width:100%;
+  font-size:{{messageFont}}px;
+  color:{{messageColor}};
+position:relative;
+  top:{{topPosition}}px;
+  font-weight:bolder;
 }
 .totalN{
   text-shadow: 2px 2px 4px #000000;
-  float:left;
   font-size:{{counterFont}}px;
   color:{{counterColor}};
   font-weight:bolder;
   margin:5px;
   padding:3px;
+ float:left;
 }
 .main-container {
   background-color: {{mainBGColor}}; 
   padding:5px;
   border:2px solid;
+
+}
+.msg{
+ float:left; 
+}
+
+.rdptlogo {
+  float:left;
 }
