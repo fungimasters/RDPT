@@ -19,7 +19,7 @@ window.addEventListener('onEventReceived', function (obj) {
            console.log("checking presence");
              if(checkPresence(event.data.displayName))
             	 {
-             	  console.log("NO need to cuont");
+
            		  }else{
            		   inspectionList.push(event.data.displayName);
                    displayMessage(event.data.displayName, inspectionList.length);
