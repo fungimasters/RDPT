@@ -11,13 +11,16 @@
   width:100%;
 }
 .totalN{
- 
+  text-shadow: 2px 2px 4px #000000;
   float:left;
   font-size:{{counterFont}}px;
   color:{{counterColor}};
   font-weight:bolder;
+  margin:5px;
+  padding:3px;
 }
 .main-container {
   background-color: {{mainBGColor}}; 
   padding:5px;
+  border:2px solid;
 }
